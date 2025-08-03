@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindu Marriage Registration - Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .custom-header {
+            background: #1b7c7c;
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-border {
+            height: 16px;
+            background: url('https://i.imgur.com/6Qw1QwB.png');
+            background-size: cover;
+        }
+        .header-border-top {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .header-border-bottom {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0 0.5rem 0;
+            background: #1b7c7c;
+        }
+        .header-logo {
+            flex: 0 0 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+        }
+        .header-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #b2dfdb;
+            background: #e3f2fd;
+            object-fit: cover;
+        }
+        .header-text {
+            text-align: left;
+        }
+        .header-title {
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px #0008;
+        }
+        .header-logo-right {
+            margin: 0 0 0.7rem 0;
+            justify-content: center;
+        }
+        .header-logo-right img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #b2dfdb;
+            background: #e3f2fd;
+            object-fit: cover;
+        }
+        .container {
+            max-width: 700px;
+            margin: 200px auto 40px auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #0001;
+        }
+        h1 { color: #2d3a4b; }
+        img { max-width: 100%; height: auto; margin-bottom: 20px; border-radius: 6px; }
+        ol, ul { margin-left: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1976d2; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        h4 { color: #222; border-bottom: 2px solid #1976d2; padding-bottom: 0.5rem; }
+        .header-title.border-bottom {
+            border-bottom: 2px solid #ff9800;
+        }
+        .header-logo-right.margin-left {
+            margin-left: 1.5rem;
+        }
+        footer {
+            background: linear-gradient(90deg, #222 0%, #444 100%);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: row;
+                align-items: center;
+                padding: 0.7rem 0 0.7rem 0;
+            }
+
+            .header-logo {
+                margin: 0 0 0.7rem 0;
+                justify-content: center;
+            }
+
+            .header-logo img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 3px solid #b2dfdb;
+                background: #e3f2fd;
+                object-fit: cover;
+            }
+
+            .header-logo-right {
+                margin: 0 0 0.7rem 0;
+                justify-content: center;
+            }
+
+            .header-logo-right img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 3px solid #b2dfdb;
+                background: #e3f2fd;
+                object-fit: cover;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .header-title {
+                font-size: 0.7rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .header-contacts {
+                font-size: 2.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                align-items: center;
+            }
+
+            .header-contacts span+span {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header-title {
+                font-size: 1.05rem;
+            }
+
+            .header-logo img {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .header-contacts {
+                font-size: 0.7rem;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-header">
+        <div class="header-border header-border-top"></div>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="/static/files/Logo.jpg" alt="Logo" />
+            </div>
+            <div class="header-text">
+                <div class="header-title border-bottom">G. RAMACHANDRAM & SONS</div>
+                <div class="header-title">D O C U M E N T W R I T E R S</div>
+            </div>
+            <div class="header-logo-right margin-left">
+                <img src="/static/files/GRC.jpg" alt="Logo" />
+            </div>
+        </div>
+        <div class="header-border header-border-bottom"></div>
+        <!-- Breaking News Ticker Attached to Navbar -->
+        <div id="breaking-news-ticker"
+            style="position:fixed;left:0;width:100vw;z-index:1200;background:#222;color:#fff;box-shadow:0 2px 8px rgba(25,118,210,0.10);height:38px;display:flex;align-items:center;overflow:hidden;">
+            <div style="font-weight:700;font-size:1rem;padding:0 1.2rem;display:flex;align-items:center;gap:0.7rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
+                    <circle cx="12" cy="12" r="12" fill="#ff9800" />
+                    <path d="M12 7v5" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="12" cy="16" r="1.2" fill="#fff" />
+                </svg>
+                <span style="font-size:1rem;font-weight:700;color:#fff;">Disclaimer</span>
+            </div>
+            <div id="ticker-content" style="white-space:nowrap;overflow:hidden;flex:1;font-size:1rem;font-weight:500;">
+                <span id="ticker-text" style="display:inline-block;"></span>
+            </div>
+        </div>
+        <script>
+            // Breaking News Headlines
+            const headlines = [
+                "The information provided in this website is for General purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind. Under no circumstance shall we have any liability to you for any loss or damage of any kind incurred as a result of the use of the site."
+            ];
+            const tickerText = document.getElementById('ticker-text');
+            const tickerContent = document.getElementById('ticker-content');
+            let currentHeadline = 0;
+            function scrollTicker() {
+                tickerText.textContent = headlines[currentHeadline];
+                const textWidth = tickerText.scrollWidth;
+                const containerWidth = tickerContent.offsetWidth;
+                // Speed: 80px/sec (adjust as needed)
+                const speed = 80;
+                const distance = textWidth + containerWidth;
+                const duration = distance / speed;
+                // Start from right edge instantly
+                tickerText.style.transition = 'none';
+                tickerText.style.transform = 'translateX(' + containerWidth + 'px)';
+                // Force reflow
+                void tickerText.offsetWidth;
+                // Animate to left edge
+                tickerText.style.transition = 'transform ' + duration + 's linear';
+                tickerText.style.transform = 'translateX(-' + textWidth + 'px)';
+            }
+            tickerText.addEventListener('transitionend', () => {
+                // Seamless loop: restart scroll immediately
+                scrollTicker();
+            });
+            // Start scrolling immediately
+            scrollTicker();
+        </script>
+    </div>
+    <div class="container">
+        <a href="/services" class="back-link">&larr; Back to Services</a>
+        <h2>HINDU MARRIAGE REGISTRATION</h2>
+        <img src="/static/files/marriage.jpg" alt="Hindu Marriage Registration">
+        <h4>REQUIREMENTS</h4>
+        <p>(Always it is better to take Original and latest copies)</p>
+        <ol>
+            <li>Bride’s minimum age at the time of solemnization of marriage must be 18 years (completed).</li>
+            <li>Bridegroom’s minimum age at the time of solemnization of marriage must be 21 years (completed).</li>
+            <li>Bride and Bridegroom AADHAR CARD.</li>
+            <li>Copies of SSC Certificates of wife and husband or passport copies (for Date of Birth proof).</li>
+            <li>Wedding invitation card.</li>
+            <li>Three photograph of marriage ceremony/traditions capturing both wife and husband.</li>
+            <li>Three witnesses to sign in the form & in the register of Registrar office. (Witnesses attend with their Aadhar cards)</li>
+        </ol>
+        <h4>PRECAUTIONS</h4>
+        <ul>
+            <li>Check thrice the details filled in the Form. Names of the BRIDE and BRIDE GROOM shall always be tallied with the names given in the passport/SSC and other certificates. Otherwise, at the time of issuance of visa and other certificates, you may have to face problem.</li>
+            <li>It is advisable to mention the name of the wife (bride) before and after marriage. (as per your require)</li>
+            <li>Check all the details before the issue of certificate and if there are any discrepancies in the names or any other details, immediately bring them to the notice of the Sub Registrar and get them rectified.</li>
+            <li>It is advised to take all the precautions and thorough check of the documents during marriage registration itself.</li>
+        </ul>
+        <h4>For better understanding of the statutory position, the relevant portion of Hindu Marriage Act, 1955 is given below:</h4>
+        <h5>SECTION 5. CONDITIONS FOR A HINDU MARRIAGE</h5>
+        <ul>
+            <li>A marriage may be solemnised between any two Hindus, if the following conditions are fulfilled, namely:-</li>
+            <li>neither party has a spouse living at the time of the marriage;</li>
+            <li>at the time of the marriage, neither party- is incapable of giving a valid consent to it in consequence of unsoundness of mind ; or</li>
+            <li>though capable of giving a valid consent, has been suffering from mental disorder of such a kind or to such an extent as to be unfit for marriage and the procreation of children; or</li>
+            <li>has been subject to recurrent attacks of insanity or epilepsy;</li>
+            <li>the bridegroom has completed the age of twenty one years and the bride, the age of eighteen years at the time of the marriage;</li>
+        </ul>
+    </div>
+    <footer>Copyright © Shubhang. 2025</footer>
+</body>
+</html>

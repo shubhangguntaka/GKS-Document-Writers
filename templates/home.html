@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Ramachandram & Son's Document Writers</title>
+    <link rel="icon" type="image/jpeg" href="/static/files/Logo.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        .custom-header {
+            background: #1b7c7c;
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-border {
+            height: 16px;
+            background: url('https://i.imgur.com/6Qw1QwB.png');
+            /* Decorative border image, replace with your own if needed */
+            background-size: cover;
+        }
+
+        .header-border-top {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .header-border-bottom {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0 0.5rem 0;
+            background: #1b7c7c;
+        }
+
+        .header-logo {
+            flex: 0 0 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+        }
+
+        .header-logo img {
+            width: 80px;
+            height: 80px;
+                border-radius: 50%;
+                border: 3px solid #b2dfdb;
+                background: #e3f2fd;
+                object-fit: cover;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-title {
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px #0008;
+        }
+
+        .header-contacts {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.3rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px #0006;
+        }
+
+        .header-contacts span+span {
+            margin-left: 2rem;
+        }
+        .header-logo-right {
+                margin: 0 0 0.7rem 0;
+                justify-content: center;
+            }
+
+            .header-logo-right img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 3px solid #b2dfdb;
+                background: #e3f2fd;
+                object-fit: cover;
+            }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: row;
+                align-items: center;
+                padding: 0.7rem 0 0.7rem 0;
+            }
+
+            .header-logo {
+                margin: 0 0 0.7rem 0;
+                justify-content: center;
+            }
+
+            .header-logo img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 3px solid #b2dfdb;
+                background: #e3f2fd;
+                object-fit: cover;
+            }
+
+            .header-logo-right {
+                margin: 0 0 0.7rem 0;
+                justify-content: center;
+            }
+
+            .header-logo-right img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 3px solid #b2dfdb;
+                background: #e3f2fd;
+                object-fit: cover;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .header-title {
+                font-size: 0.7rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .header-contacts {
+                font-size: 2.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                align-items: center;
+            }
+
+            .header-contacts span+span {
+                margin-left: 0;
+            }
+
+            nav ul li a {
+                font-size: small;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header-title {
+                font-size: 1.05rem;
+            }
+
+            .header-logo img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .container,
+            .welcome {
+                padding: 0.5rem;
+            }
+
+            .documents-writers-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .about-col-1 img {
+                width: 100%;
+                height: auto;
+                max-width: 220px;
+            }
+
+            .header-contacts span+span {
+                margin-left: 0.5rem;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .header-contacts {
+                font-size: 0.7rem;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .documents-writers-container {
+                flex-direction: column !important;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .about-col-1 {
+                order: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .about-col-2 {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .documents-writers-container .about-col-1 {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Ensure image then matter order for both containers on mobile */
+        @media (max-width: 700px) {
+            .documents-writers-container {
+                flex-direction: column !important;
+            }
+
+            .documents-writers-container .about-col-1 {
+                order: 1;
+            }
+
+            .documents-writers-container .about-col-2 {
+                order: 2;
+            }
+        }
+
+        nav {
+            background: #222;
+            padding: 0.5rem 0;
+            position: fixed;
+            top: 145px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        nav ul li a.home-active {
+            color: #ff9800;
+        }
+
+        .welcome {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        .welcome img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .welcome {
+                padding: 0.7rem;
+                margin: 1rem auto;
+                font-size: 0.95rem;
+            }
+            .welcome img {
+                max-width: 95vw;
+                width: 100%;
+            }
+        }
+        @media (max-width: 400px) {
+            .welcome {
+                padding: 0.4rem;
+                margin: 0.5rem auto;
+                font-size: 0.85rem;
+            }
+            .welcome img {
+                max-width: 98vw;
+                width: 100%;
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: justify;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: auto;
+            display: none;
+            object-fit: cover;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                width: 95%;
+                margin: 1rem auto;
+            }
+
+            .carousel-slide {
+                width: 100%;
+                height: auto;
+                max-height: 280px;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-slide {
+                max-height: 180px;
+            }
+        }
+
+
+        .documents-writers-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            background: linear-gradient(120deg, #fffbe6 0%, #ffe0b2 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(255, 152, 0, 0.10);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .documents-writers-container.alt-bg {
+            background: linear-gradient(120deg, #ffe0b2 0%, #f8f1e5 100%);
+        }
+
+        .about-col-1 img {
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+            background: #fff;
+        }
+
+        .about-col-2 {
+            flex: 1;
+            padding-left: 1rem;
+        }
+
+        .sub-title {
+            color: #ff9800;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #222 0%, #444 100%);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+
+        .main-content-with-sidebar {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            max-width: 1300px;
+            margin: 2rem auto;
+            margin-top: 200px;
+        }
+
+        .main-content-flex {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .right-sidebar {
+            width: 320px;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+            padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .fy-card {
+            text-align: center;
+            border-top: 5px solid #1b7c7c;
+        }
+
+        .fy-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1b7c7c;
+        }
+
+        .fy-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.2rem;
+        }
+
+        .fy-type {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 0.7rem;
+        }
+
+        .fy-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .fy-count {
+            font-size: 2.1rem;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        .fy-btn {
+            background: #1b7c7c;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.2rem;
+            transition: background 0.2s;
+        }
+
+        .fy-btn:hover {
+            background: #145c5c;
+        }
+
+        .news-card {
+            border-top: 5px solid #ff9800;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff9800;
+            margin-bottom: 0.7rem;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .news-list a {
+            color: #1b7c7c;
+            font-weight: 600;
+            text-decoration: underline;
+            margin-left: 0.3rem;
+        }
+
+        .sidebar-card.contact-us {
+            border-top: 5px solid #1976d2;
+            background: linear-gradient(120deg, #e3f2fd 0%, #fff 100%);
+            box-shadow: 0 2px 12px rgba(25, 118, 210, 0.10);
+            margin-top: 0.5rem;
+            padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+            border-radius: 14px;
+        }
+
+        .sidebar-card.contact-us h3 {
+            color: #1976d2;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.7rem;
+        }
+
+        .sidebar-card.contact-us ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-card.contact-us li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .sidebar-card.contact-us a {
+            color: #1976d2;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .sidebar-card.contact-us p {
+            color: #444;
+            font-size: 0.98rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .sidebar-card.precautions-card {
+            margin-top: 25px;
+            max-height: 260px;
+            overflow: hidden;
+            position: relative;
+            border-top: 5px solid #1976d2;
+            background: linear-gradient(120deg, #f5fafd 0%, #fff 100%);
+            box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
+        }
+
+        .precautions-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 0.7rem;
+        }
+
+        #precautions-scroll {
+            height: 200px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            padding-right: 6px;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE 10+ */
+        }
+
+        #precautions-scroll::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera */
+        }
+
+        .precautions-list {
+            font-size: 0.98rem;
+            color: #333;
+            line-height: 1.5;
+            padding-left: 1.2em;
+        }
+
+        .precautions-list>li {
+            margin-top: 1em;
+        }
+
+        .precautions-list ol {
+            margin-top: 0.5em;
+        }
+
+        h2, .sub-title, .header-title {
+            /* Remove old h2 style, add new h2 and h3 styles below */
+        }
+        h2 {
+            color: #1976d2;
+            font-size: 2rem;
+            font-weight: 700;
+            padding-bottom: 0.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        h3 {
+            color: #1976d2;
+            border-bottom: 2px solid #0026ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 1100px) {
+            .main-content-with-sidebar {
+                flex-direction: column;
+            }
+
+            .right-sidebar {
+                width: 100%;
+                min-width: 0;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            .sidebar-card {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .main-content-with-sidebar {
+                flex-direction: column;
+            }
+
+            .right-sidebar {
+                width: 100%;
+                min-width: 0;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                top: 130px;
+            }
+            .main-content-with-sidebar {
+                margin-top: 220px;
+            }
+        }
+        @media (max-width: 400px) {
+            nav {
+                top: 80px;
+            }
+            .main-content-with-sidebar {
+                margin-top: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-header">
+        <div class="header-border header-border-top"></div>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="/static/files/Logo.jpg" alt="Logo" />
+            </div>
+            <div class="header-text">
+                <div class="header-title" style="border-bottom: 2px solid #ff9800;">G. RAMACHANDRAM & SONS</div>
+                <div class="header-title">D O C U M E N T W R I T E R S</div>
+                
+                <!--<div class="header-contacts">
+                                <span>KUMAR - 8919104530</span>
+                                <span>SANTHOSH - 8686088400</span>
+                            </div>-->
+            </div>
+            <div class="header-logo-right" style="margin-left: 1.5rem;">
+                <img src="/static/files/GRC.jpg" alt="Logo" />
+            </div>
+        </div>
+        <div class="header-border header-border-bottom"></div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/" class="home-active">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/downloads">Downloads</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <!-- Breaking News Ticker Attached to Navbar -->
+        <div id="breaking-news-ticker"
+            style="position:fixed;left:0;width:100vw;z-index:1200;background:#222;color:#fff;box-shadow:0 2px 8px rgba(25,118,210,0.10);height:38px;display:flex;align-items:center;overflow:hidden;">
+            <div style="font-weight:700;font-size:1rem;padding:0 1.2rem;display:flex;align-items:center;gap:0.7rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
+                    <circle cx="12" cy="12" r="12" fill="#ff9800" />
+                    <path d="M12 7v5" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="12" cy="16" r="1.2" fill="#fff" />
+                </svg>
+                <span style="font-size:1rem;font-weight:700;color:#fff;">Disclaimer</span>
+            </div>
+            <div id="ticker-content" style="white-space:nowrap;overflow:hidden;flex:1;font-size:1rem;font-weight:500;">
+                <span id="ticker-text" style="display:inline-block;"></span>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 600px) {
+                #breaking-news-ticker {
+                    top: calc(130px + 48px) !important;
+                }
+            }
+        
+            @media (max-width: 400px) {
+                #breaking-news-ticker {
+                    top: calc(80px + 48px) !important;
+                }
+            }
+        </style>
+        <script>
+            // Breaking News Headlines
+            const headlines = [
+                "The information provided in this website is for General purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind. Under no circumstance shall we have any liability to you for any loss or damage of any kind incurred as a result of the use of the site."
+            ];
+            const tickerText = document.getElementById('ticker-text');
+            const tickerContent = document.getElementById('ticker-content');
+            let currentHeadline = 0;
+            function scrollTicker() {
+                tickerText.textContent = headlines[currentHeadline];
+                const textWidth = tickerText.scrollWidth;
+                const containerWidth = tickerContent.offsetWidth;
+                // Speed: 80px/sec (adjust as needed)
+                const speed = 80;
+                const distance = textWidth + containerWidth;
+                const duration = distance / speed;
+                // Start from right edge instantly
+                tickerText.style.transition = 'none';
+                tickerText.style.transform = 'translateX(' + containerWidth + 'px)';
+                // Force reflow
+                void tickerText.offsetWidth;
+                // Animate to left edge
+                tickerText.style.transition = 'transform ' + duration + 's linear';
+                tickerText.style.transform = 'translateX(-' + textWidth + 'px)';
+            }
+            tickerText.addEventListener('transitionend', () => {
+                // Seamless loop: restart scroll immediately
+                scrollTicker();
+            });
+            // Start scrolling immediately
+            scrollTicker();
+        </script>
+    </nav>
+    <!--<div class="welcome">
+        <h1>Welcome to the G Ramachandram & Son's Document Writers Page</h1>
+        <p></p>
+    </div>-->
+    <div class="main-content-with-sidebar">
+        <div class="main-content-flex">
+            <!-- Main content starts -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="\static\files\G Document Writers.jpg" alt="Document Writers" class="carousel-slide active">
+                    <img src="\static\files\marriage.jpg" alt="Marriage" class="carousel-slide">
+                    <img src="\static\files\property.jpg" alt="Property" class="carousel-slide">
+                </div>
+                <!--<button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>-->
+            </div>
+            <script>
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('.carousel-slide');
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                }
+
+                function moveSlide(direction) {
+                    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                }
+
+                // Auto-slide every 5 seconds
+                setInterval(() => moveSlide(1), 5000);
+
+                // Initialize
+                showSlide(currentSlide);
+            </script>
+                <div class="welcome">
+                    <img src="\static\files\Visiting Card.jpg" alt="Visiting Card" style="width: 700px;">
+                </div>
+            <div class="container">
+                <b>We prepare all types of Drafts:</b><br><br>
+                Agreement of Sale, Sale Deed, Gift Deeds, Development Agreement Deeds, Partition Deeds, Lease Deeds, Power of Attorney (General & Special), Will Deeds, Release of Rights, Mortgage, Memorandum of Deposit of Title Deeds, Mortgage Release & etc.<br><br>
+                <b>Why Choose Us?</b>
+                <ul>
+                  <li><b>Expert Drafting:</b> Our experienced team ensures that every document is legally sound and tailored to your specific needs.</li>
+                  <li><b>Wide Range of Services:</b> From property transactions to personal legal documents, we cover all types of deeds and agreements.</li>
+                  <li id="precautions"><b>Personalized Consultation:</b> We provide guidance and clarification on the documentation process, helping you understand every clause.</li>
+                  <li><b>Confidentiality:</b> Your information and documents are handled with the utmost privacy and care.</li>
+                  <li><b>Quick Turnaround:</b> We value your time and strive to deliver drafts promptly without compromising on quality.</li>
+                </ul>
+                For any queries or to get your draft prepared, <a href="/contact">contact us</a> today!
+            </div>
+            <div class="container">
+                <h2>PRECAUTIONS</h2>
+                <section>
+                    <h3>Precautions Before the Purchase/Registration of Property</h3>
+                    <ul>
+                        <li>Ensure the property is <strong>not under mortgage, litigation, prohibited list, or court
+                                case</strong>. If any such issues are found contact the relevant office or officer.
+                        </li>
+                        <li>Verify all <strong>link documents</strong> and related papers such as Ownership details, Permission, LRS,
+                            Pahanies, or any other documents from the seller.</li>
+                        <li>It is advisable to consult a <strong>Legal Advisor/Advocate</strong> and obtain a legal
+                            opinion.</li>
+                        <li>Check for <strong>pending dues</strong> to government authorities, such as property tax,
+                            vacant land tax, etc.</li>
+                        <li>Verify the <strong>Encumbrance Certificate (EC)</strong> related to the property.</li>
+                    </ul>
+                    <h3>Before the Registration of Property</h3>
+                    <ul>
+                        <li>Allow sufficient time for the preparation of the registered document. Rushing may lead to
+                            mistakes.</li>
+                        <li>Read the document <strong>carefully</strong>. If any mistakes are found, correct them before
+                            registration. After registration, verification is of no use.</li>
+                        <li>Verify details such as spelling in names of executants and claimants(as per Aadhaar Card), Survey No., Plot No., House No., area
+                            of land, plinth area, boundaries, link document numbers, etc., before registration.</li>
+                        <li>If discrepancies are found in the marriage certificate issued by the Sub Registrar,
+                            rectification can be a cumbersome process.</li>
+                        <li>Mention the <strong>payment details</strong> of sale consideration.</li>
+                        <li>Do not forget to collect all link documents and related papers from the seller.</li>
+                    </ul>
+                    <h3>After the Registration of Property</h3>
+                    <ul></ul>
+                        <li>Ensure all property details are entered correctly in the records of the Registration Office.
+                            If any errors are found, immediately notify the Sub Registrar for rectification.</li>
+                    </ul>
+                </section>
+            </div>
+            <!-- Main content ends -->
+        </div>
+        <aside class="right-sidebar">
+            <div class="sidebar-card precautions-card">
+                <div class="precautions-title"><a href="#precautions">Precautions</a></div>
+                <div id="precautions-scroll">
+                    <ol class="precautions-list">
+                        <b>Before the Purchase of Property:</b>
+                            <ol>
+                                <li>Please make sure the Property is Under Mortgage, Litigation, Prohibited list/Court
+                                    case or not. If found contact the relevant office/officer.</li>
+                                <li>Do verify all the Link Documents, and all the papers such as Ownership details, Permission, LRS,
+                                    Pahanies, or any other related papers to the Purchased Property from the Seller.
+                                </li>
+                                <li>It is better to take verify with the Legal Advisor/Advocate and take a Legal
+                                    Opinion.</li>
+                                <li>Verify the pending dues to Government authority/office, such as Property Tax, Vacant
+                                    land tax etc.</li>
+                                <li>Verify the Encumbrance Certificate (EC) relating the property.</li>
+                            </ol>
+                        <b>Before the Registration of Property:</b>
+                            <ol start="6">
+                                <li>Give time to prepare the Regd. Document, Preparation of Document with Hurry burry,
+                                    there is a chance to Mistakes.</li>
+                                <li>Spend time to read the Document CAREFULLY, if any mistakes found make corrections
+                                    before the Registration. After registration there is no use of verify.</li>
+                                <li>VERIFY the details of Names of Executants and Claimant, Survey No., Plot No.., House
+                                    No., Area of the Land, Plinth area, Boundaries of the purchased property and Link
+                                    Document No’s., etc., before the Registration.</li>
+                                <li>In case of any discrepancy in the details found subsequently in the marriage
+                                    certificate issued by the Sub Registrar, there is a cumbersome procedure involved to
+                                    get rectify such discrepancies.</li>
+                                <li>Mention the payment details of Sale Consideration.</li>
+                                <li>Don't forget to take all the Link Documents, and all the papers such as Permission,
+                                    LRS, Pahanies, or any other related papers to the Purchased Property from the
+                                    Seller.</li>
+                            </ol>
+                        <b>After the Registration of Property:</b>
+                            <ol start="12">
+                                <li>Make sure all the details of the property entered correctly or not in the records of
+                                    the Registration Office. If found any wrong fed, immediately bring them to the
+                                    notice of the Sub Registrar and get them rectified.</li>
+                            </ol>
+                    </ol>
+                </div>
+            </div>
+            <div class="sidebar-card fy-card">
+                <div class="fy-title">FY 2025-26</div>
+                <div class="fy-date">As on <span id="fy-date">27-06-2025 12:26 PM</span></div>
+                <div class="fy-type">(Non-Agriculture)</div>
+                <div class="fy-divider"></div>
+                <div class="fy-count" id="fy-count">284762</div>
+                <button class="fy-btn">Document Registrations</button>
+            </div>
+            <div class="sidebar-card news-card">
+                <div class="news-title">News & Events</div>
+                <ul class="news-list" id="news-list">
+                    <li>Revised Rates of Stamp Duty <a href="https://registration.telangana.gov.in/GO_MSNo_59.htm">Click
+                            here</a></li>
+                    <li>"Jagraththa"- A short film on awareness about property purchase and registration process <a
+                            href="https://registration.telangana.gov.in/propertyRegistrationVideo.htm">Click here</a>
+                    </li>
+                    <li>Beware of brokers and middlemen. In case of any complaint please call 1800-599-4788</li>
+                </ul>
+            </div>
+            <div class="sidebar-card contact-us">
+                <h3>Contact Us</h3>
+                <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+                <ul>
+                    <li>Email: <a href="mailto:gkumar.reg@gmail.com">gkumar.reg@gmail.com</a></li>
+                    <li>Phone: <a href="tel:+918919104530">8919104530</a></li>
+                    <li>Phone: <a href="tel:+918686088400">8686088400</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer>Copyright © Shubhang. 2025</footer>
+    <script>
+        // Fetch FY 2025-26 and News from Flask backend
+        async function updateFYCountAndNews() {
+            try {
+                const response = await fetch('/api/fy-news');
+                const data = await response.json();
+                // FY Section
+                const fyDateElem = document.getElementById('fy-date');
+                const fyCountElem = document.getElementById('fy-count');
+                if (data.fy_date && fyDateElem) fyDateElem.textContent = data.fy_date;
+                if (data.fy_count && fyCountElem) fyCountElem.textContent = data.fy_count;
+                // News Section
+                const newsList = document.getElementById('news-list');
+                if (newsList && Array.isArray(data.news)) {
+                    let newsHtml = '';
+                    let hasValidNews = false;
+                    for (const item of data.news) {
+                        if (item.url && typeof item.url === 'string' && item.url.startsWith('http')) {
+                            newsHtml += `<li>${item.title} <a href="${item.url}" target="_blank" rel="noopener noreferrer">Click here</a></li>`;
+                            hasValidNews = true;
+                        } else if (!item.url) {
+                            newsHtml += `<li>${item.title}</li>`;
+                            hasValidNews = true;
+                        }
+                        // If item.url exists but is not a valid http(s) link, skip rendering as a link
+                    }
+                    // Only update if we have at least one valid news item
+                    if (hasValidNews) {
+                        newsList.innerHTML = newsHtml;
+                    }
+                }
+            } catch (e) {
+                // Show error in the sidebar for debugging
+                const fyDateElem = document.getElementById('fy-date');
+                const fyCountElem = document.getElementById('fy-count');
+                if (fyDateElem) fyDateElem.textContent = 'Error';
+                if (fyCountElem) fyCountElem.textContent = 'Error';
+                const newsList = document.getElementById('news-list');
+                if (newsList) newsList.innerHTML = '<li>Unable to fetch live data.</li>';
+            }
+        }
+        updateFYCountAndNews();
+        setInterval(updateFYCountAndNews, 5 * 60 * 1000);
+    </script>
+    <script>
+        // Auto-scroll for precautions (infinite loop)
+        (function () {
+            const scrollDiv = document.getElementById('precautions-scroll');
+            if (!scrollDiv) return;
+            // Duplicate the content for seamless infinite scroll
+            const originalContent = scrollDiv.innerHTML;
+            scrollDiv.innerHTML = originalContent + originalContent;
+            let scrollStep = 1;
+            let resetPoint = scrollDiv.scrollHeight / 2;
+            let interval = setInterval(() => {
+                if (!scrollDiv) return;
+                if (scrollDiv.scrollTop >= resetPoint) {
+                    scrollDiv.scrollTop = 0;
+                } else {
+                    scrollDiv.scrollTop += scrollStep;
+                }
+            }, 60); // Adjust speed as needed
+            scrollDiv.addEventListener('mouseenter', () => clearInterval(interval));
+            scrollDiv.addEventListener('mouseleave', () => {
+                interval = setInterval(() => {
+                    if (scrollDiv.scrollTop >= resetPoint) {
+                        scrollDiv.scrollTop = 0;
+                    } else {
+                        scrollDiv.scrollTop += scrollStep;
+                    }
+                }, 60);
+            });
+        })();
+    </script>
+</body>
+
+</html>
