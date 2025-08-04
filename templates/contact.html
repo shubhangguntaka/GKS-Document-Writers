@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://kit.fontawesome.com/54f53af35a.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .contact-left,
+        .contact-right {
+            flex: 1 1 350px;
+            min-width: 300px;
+            text-align: left;
+            background: none;
+        }
+
+        .contact-left {
+            padding-right: 2rem;
+        }
+
+        .contact-right {
+            padding-left: 2rem;
+            border-left: 1px solid #eee;
+        }
+
+        .sub-title {
+            font-size: 2rem;
+            color: #222;
+            margin-bottom: 1.5rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        .btn,
+        .btn2 {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: #fafafa;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            border: 1.5px solid #1976d2;
+            outline: none;
+            box-shadow: 0 0 0 2px #1976d233;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 0;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-top: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn2 {
+            background: #222;
+            color: #fff;
+            margin-right: 0.5rem;
+        }
+
+        .btn:hover,
+        .btn2:hover {
+            background: #1976d2;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+        }
+
+        #msg {
+            display: block;
+            margin-top: 1rem;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .contact-right p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        .contact-right i {
+            color: #1976d2;
+            margin-right: 0.5rem;
+        }
+
+        .social-icons {
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 0.5rem 0.5rem 0;
+            font-size: 1.5rem;
+            color: #222;
+            background: #f4f4f4;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .social-icons a:hover {
+            background: #1976d2;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(255, 152, 0, 0.15);
+        }
+
+        .or-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            min-width: 60px;
+            height: auto;
+            margin: 0 -30px;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .or-divider span {
+            background: #fff;
+            padding: 0 16px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1976d2;
+            z-index: 1;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            display: none;
+        }
+
+        .contact-left>div:first-child {
+            height: 150px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-left,
+            .contact-right {
+                padding: 0;
+                border: none;
+            }
+
+            .or-divider {
+                width: 100%;
+                min-width: unset;
+                flex-direction: row;
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .sub-title {
+                font-size: 1rem;
+            }
+
+            .btn,
+            .btn2 {
+                font-size: 0.9rem;
+            }
+        }
+
+        .contact-left a[href*="maps"] {
+            display: inline-block;
+            margin: 1rem 0 0.5rem 0;
+            color: #222;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.05rem;
+            background: #e6f9ff;
+            border-left: 4px solid #1976d2;
+            padding: 0.75rem 1rem;
+            border-radius: 6px 20px 20px 6px;
+            box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-left a[href*="maps"]:hover {
+            background: #b3ddff;
+            color: #1976d2;
+            box-shadow: 0 4px 16px rgba(255, 152, 0, 0.15);
+        }
+
+        .contact-left a[href*="maps"] i {
+            color: #1976d2;
+            margin-right: 0.5rem;
+        }
+
+        /* Add style for .contact-email to match the rest of the contact info */
+        .contact-email {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        .contact-email i {
+            color: #1976d2;
+            margin-right: 0.5rem;
+        }
+
+        .contact-email a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+
+        .contact-email a:hover {
+            color: #1976d2;
+            text-decoration: underline;
+        }
+
+        .contact-title-margin {
+            margin-bottom: -70px;
+        }
+
+        /* Business Info Card Styles */
+        .business-card {
+            margin-top: 100px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .business-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.2rem 1.2rem 0.7rem 1.2rem;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+
+        .business-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #eee;
+            background: #fafafa;
+            margin-right: 0.7rem;
+        }
+
+        .business-card h2 {
+            font-size: 1.35rem;
+            margin: 0 0 0.2rem 0;
+            color: #333;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .business-type {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: normal;
+            display: inline-block;
+            margin-left: 0.2rem;
+        }
+
+        .business-rating {
+            margin: 0.3rem 0 0.2rem 0;
+            font-size: 1.1rem;
+            color: #ff9800;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .stars {
+            color: #ff9800;
+            font-size: 1.1rem;
+            margin-right: 0.1rem;
+        }
+
+        .rating-score {
+            color: #222;
+            font-weight: bold;
+            margin-left: 0.1rem;
+            margin-right: 0.2rem;
+        }
+
+        .review-count {
+            color: #666;
+            font-size: 0.95rem;
+            margin-left: 0.3rem;
+        }
+
+        .business-category {
+            color: #1b7c7c;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .business-card-body {
+            padding: 1.1rem 1.2rem 1.2rem 1.2rem;
+        }
+
+        .business-info {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 1.1rem;
+        }
+
+        .business-info div {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .business-info i {
+            color: #1976d2;
+            min-width: 20px;
+            font-size: 1.1em;
+        }
+
+        .business-info a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .business-info a:hover {
+            color: #1976d2;
+            text-decoration: underline;
+        }
+
+        .business-actions {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .business-actions a {
+            flex: 1 1 120px;
+            text-align: center;
+            padding: 0.6rem 0;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .business-actions a:hover {
+            background: #1b7c7c;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .business-actions .btn {
+            background: #1976d2;
+            color: #fff;
+        }
+
+        .business-actions .btn2 {
+            background: #222;
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .business-card {
+                max-width: 98vw;
+            }
+
+            .business-card-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.7rem;
+            }
+
+            .business-photo {
+                margin: 0 0 0.5rem 0;
+            }
+
+            .business-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .business-actions a {
+                font-size: 0.98rem;
+                padding: 0.7rem 0;
+            }
+        }
+       /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .container,
+        .dark-mode .business-card {
+            background: #262626;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .dark-mode .sub-title,
+        .dark-mode .business-card h2,
+        .dark-mode .rating-score {
+            color: #f0f0f0;
+        }
+
+        .dark-mode .business-card-header {
+            background: #1e1e1e;
+            border-bottom: 1px solid #444;
+        }
+
+        .dark-mode .business-type,
+        .dark-mode .review-count {
+            color: #b0b0b0;
+        }
+
+        .dark-mode .business-category {
+            color: #00bcd4;
+        }
+
+        .dark-mode .business-info,
+        .dark-mode .contact-right p,
+        .dark-mode .contact-email,
+        .dark-mode .contact-email a {
+            color: #f0f0f0;
+        }
+
+        .dark-mode .business-info i,
+        .dark-mode .contact-right i,
+        .dark-mode .contact-email i {
+            color: #00bcd4;
+        }
+
+        .dark-mode .business-info a:hover,
+        .dark-mode .contact-email a:hover {
+            color: #00bcd4;
+        }
+
+        .dark-mode input[type="text"],
+        .dark-mode input[type="email"],
+        .dark-mode input[type="tel"],
+        .dark-mode textarea {
+            background: #333;
+            border-color: #555;
+            color: #f0f0f0;
+        }
+
+        .dark-mode input[type="text"]:focus,
+        .dark-mode input[type="email"]:focus,
+        .dark-mode input[type="tel"]:focus,
+        .dark-mode textarea:focus {
+            border-color: #00bcd4;
+            box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+        }
+
+        .dark-mode .btn,
+        .dark-mode .btn2 {
+            background: #00bcd4;
+            color: #1a1a1a;
+        }
+
+        .dark-mode .btn:hover,
+        .dark-mode .btn2:hover {
+            background: #0097a7;
+            box-shadow: 0 2px 8px rgba(0, 188, 212, 0.2);
+        }
+
+        .dark-mode .social-icons a {
+            background: #333;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .social-icons a:hover {
+            background: #00bcd4;
+            color: #1a1a1a;
+        }
+
+        .dark-mode .or-divider span {
+            background: #262626;
+            color: #00bcd4;
+            box-shadow: 0 2px 8px rgba(0, 188, 212, 0.1);
+        }
+
+        .dark-mode .contact-left a[href*="maps"] {
+            background: #1e3a4c;
+            border-left: 4px solid #00bcd4;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .contact-left a[href*="maps"]:hover {
+            background: #244c68;
+            color: #f0f0f0;
+        }
+         /* Dark mode toggle switch */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+
+        .theme-switch input {
+            display:none;
+        }
+
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-white">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 fixed top-0 left-0 w-full z-50 shadow">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/static/files/Logo.jpg" style="border-radius: 50%;" class="h-8" alt="Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GKS DOCUMENT
+                    WRITERS</span>
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="/"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                    <li>
+                        <div class="relative flex items-center">
+                            <a href="/services"
+                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Services</a>
+                            <button id="dropdownArrow" type="button" data-dropdown-toggle="dropdownNavbar"
+                                class="flex items-center px-1 focus:outline-none" aria-expanded="false"
+                                aria-controls="dropdownNavbar" tabindex="0" style="background: none; border: none;">
+                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownNavbar"
+                                class="z-10 hidden absolute top-full left-0 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                    aria-labelledby="dropdownArrow">
+                                    <li>
+                                        <a href="/marriage-details"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Marriage
+                                            Registration</a>
+                                    </li>
+                                    <li>
+                                        <a href="/property-registration"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Property
+                                            Registration</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/downloads"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="/about"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About
+                            Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact"
+                            class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                            aria-current="page">Contact
+                            Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Business Info Card (Google Maps style) -->
+    <div class="business-card">
+        <div class="business-card-header">
+            <img src="/static/files/Logo.jpg" alt="Office Photo" class="business-photo">
+            <div>
+                <h2>G Ramachandram & Sons <span class="business-type">(Document Writers)</span></h2>
+                <div class="business-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-score">5.0</span>
+                    <span class="review-count">(4 Google reviews)</span>
+                </div>
+                <div class="business-category">Land registry office in Karimnagar, Telangana</div>
+            </div>
+        </div>
+        <div class="business-card-body">
+            <div class="business-info">
+                <div><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> Collectorate Road, Opp: 2d Gate
+                    of Collectorate, Near Siri Tiffin Centre, Mukurampura, Karimnagar, Telangana 505001
+                </div>
+                <div><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> <a href="tel:+918919104530">89191
+                        04530</a>(10am - 6pm)</div>
+                <div><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> <a href="tel:+918686088400">86860
+                        88400</a>(10am - 6pm)</div>
+                <div><i class="fa-regular fa-clock"></i> <strong>Hours:</strong> Open 10:00 am · Closes 7:30 pm</div>
+            </div>
+            <div class="business-actions">
+                <a href="https://maps.app.goo.gl/gxuQb2vaJhvCnJDs9" class="btn"><i
+                        class="fa-solid fa-map-location-dot"></i> Directions</a>
+                <a href="tel:+918686088400" class="btn btn2"><i class="fa-solid fa-phone"></i> Call</a>
+                <a href="https://www.google.com/search?kgmid=/g/11h890ysgc&hl=en-IN&q=G+Ramachandram+%26+Sons+(Document+Writers)"
+                    class="btn"><i class="fa-brands fa-google"></i> Google</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <div class="contact-title-margin">
+                    <h1 class="sub-title">Contact me</h1>
+                </div>
+                <a href="https://maps.app.goo.gl/gxuQb2vaJhvCnJDs9"><i class="fa-solid fa-location-dot"></i> Near
+                    Collectorate Road beside Siri Tiffins, Mukurampura, Karimnagar, Telangana - 505001</a>
+                <p class="contact-email"><i class="fa-regular fa-envelope"></i> <a
+                        href="mailto:gkumar.reg@gmail.com">gkumar.reg@gmail.com</a>
+                </p>
+                <!--<p class="contact-email"><i class="fa-regular fa-envelope"></i> <a
+                        href="mailto:santhosh.digit@gmail.com">santhosh.digit@gmail.com</a>
+                </p>-->
+                <p class="contact-email"><i class="fa-solid fa-phone"></i> <a href="tel:+918919104530"> +91 89191
+                        04530</a></p>
+                <p class="contact-email"><i class="fa-solid fa-phone"></i> <a href="tel:+918686088400"> +91 86860
+                        88400</a></p>
+                <div class="social-icons">
+                    <a href="https://api.whatsapp.com/send?phone=+918919104530&text=Hey there! I have visited your office Website"
+                        title="WhatsApp Kumar"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=+918686088400&text=Hey there! I have visited your office Website"
+                        title="WhatsApp Santhosh"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="or-divider"><span>OR</span></div>
+            <div class="contact-right">
+                <h3>Contact me by sending the message <i class="fa-regular fa-hand-point-down"></i></h3>
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="eMail" placeholder="Your eMail" required>
+                    <input type="tel" name="Phone" placeholder="Your Phone Number" pattern="[0-9]{10,15}" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message/Query"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                    <img src="/static/files/Logo.jpg" class="h-8" style="border-radius: 50%;" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GSK Document
+                        Writers</span>
+                </a>
+                <ul
+                    class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                    <li>
+                        <a href="/" class="hover:underline me-4 md:me-6">Home</a>
+                    </li>
+                    <li>
+                        <a href="/services" class="hover:underline me-4 md:me-6">Services</a>
+                    </li>
+                    <li>
+                        <a href="/downloads" class="hover:underline me-4 md:me-6">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="/about" class="hover:underline me-4 md:me-6">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact" class="hover:underline">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a
+                    href="https://flowbite.com/" class="hover:underline">Shubhang</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
+    <script>
+        // Google Sheet form logic
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzo3lmBt1kwmj4qD-_whrXjPLpUTUZAfY_LbHRZgJfqEyMV2DI85sdF0A4EQ78ymMZ_5A/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully";
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 5000);
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+
+</html>

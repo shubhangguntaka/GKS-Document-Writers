@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+
+# Environment variables
+.env
+
+# Pytest
+.pytest_cache/
+
+# VS Code
+.vscode/
+
+# Mac/Linux/Windows hidden files
+.DS_Store
+Thumbs.db
+# Logs
+*.log
+logs/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Node.js
+node_modules/
+
+# Python environment
+.env.*
+.python-version
+
+# Deployment
+.serverless/
+.vercel/
+.next/
+.heroku/
+.idea/

@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "flowbite": "^3.1.2",
+    "tailwindcss": "^4.1.11"
+  },
+  "name": "g-kumar-santhosh-document-writers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "build": "tailwindcss -i ./app/static/src/input.css -o ./app/static/dist/css/output.css --minify"
+},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhangguntaka/GKS-Document-Writers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shubhangguntaka/GKS-Document-Writers/issues"
+  },
+  "homepage": "https://github.com/shubhangguntaka/GKS-Document-Writers#readme"
+}

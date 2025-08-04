@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Ramachandram & Son's Document Writers</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+    <link rel="icon" type="image/jpeg" href="/static/files/Logo.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</head>
+
+<body class=" dark:bg-gray-900 dark:text-white">
+    <!--NavBar-->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 fixed top-0 left-0 w-full z-50 shadow">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/static/files/Logo.jpg" style="border-radius: 50%;" class="h-8" alt="Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GKS DOCUMENT
+                    WRITERS</span>
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <div class="relative flex items-center">
+                            <a href="/services"
+                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Services</a>
+                            <button id="dropdownArrow" type="button" data-dropdown-toggle="dropdownNavbar"
+                                class="flex items-center px-1 focus:outline-none" aria-expanded="false"
+                                aria-controls="dropdownNavbar" tabindex="0" style="background: none; border: none;">
+                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownNavbar"
+                                class="z-10 hidden absolute top-full left-0 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                    aria-labelledby="dropdownArrow">
+                                    <li>
+                                        <a href="/marriage-details"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Marriage
+                                            Registration</a>
+                                    </li>
+                                    <li>
+                                        <a href="/property-registration"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Property
+                                            Registration</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/downloads"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="/about"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About
+                            Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact
+                            Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="pt-4 flex">
+        <!--SideBar-->
+        <aside id="default-sidebar"
+            class="absolute top-15 left-0 w-80 self-start transition-transform -translate-x-full sm:translate-x-0"
+            aria-label="Sidebar">
+            <div class="px-3 py-4">
+                <ul class="space-y-2 font-medium">
+                    <li>
+                        <div
+                            class="sidebar-card precautions-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
+                            <div class="precautions-title text-lg font-semibold text-blue-700 mb-2"><a
+                                    href="#precautions">Precautions</a></div>
+                            <div id="precautions-scroll" class="max-h-100 overflow-y-auto pr-2">
+                                <div class="mb-4">
+                                    <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-1 text-base">Before the
+                                        Purchase of Property:</h3>
+                                    <ul
+                                        class="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                        <li>Please make sure the Property is Under Mortgage, Litigation, Prohibited
+                                            list/Court case or not. If found contact the relevant office/officer.</li>
+                                        <li>Do verify all the Link Documents, and all the papers such as Ownership
+                                            details,
+                                            Permission, LRS, Pahanies, or any other related papers to the Purchased
+                                            Property
+                                            from the Seller.</li>
+                                        <li>It is better to take verify with the Legal Advisor/Advocate and take a Legal
+                                            Opinion.</li>
+                                        <li>Verify the pending dues to Government authority/office, such as Property
+                                            Tax,
+                                            Vacant land tax etc.</li>
+                                        <li>Verify the Encumbrance Certificate (EC) relating the property.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-4">
+                                    <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-1 text-base">Before the
+                                        Registration of Property:</h3>
+                                    <ul class="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm"
+                                        start="6">
+                                        <li>Give time to prepare the Regd. Document, Preparation of Document with Hurry
+                                            burry, there is a chance to Mistakes.</li>
+                                        <li>Spend time to read the Document CAREFULLY, if any mistakes found make
+                                            corrections before the Registration. After registration there is no use of
+                                            verify.</li>
+                                        <li>VERIFY the details of Names of Executants and Claimant, Survey No., Plot
+                                            No..,
+                                            House No., Area of the Land, Plinth area, Boundaries of the purchased
+                                            property
+                                            and Link Document No’s., etc., before the Registration.</li>
+                                        <li>In case of any discrepancy in the details found subsequently in the marriage
+                                            certificate issued by the Sub Registrar, there is a cumbersome procedure
+                                            involved to get rectify such discrepancies.</li>
+                                        <li>Mention the payment details of Sale Consideration.</li>
+                                        <li>Don't forget to take all the Link Documents, and all the papers such as
+                                            Permission, LRS, Pahanies, or any other related papers to the Purchased
+                                            Property
+                                            from the Seller.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-1 text-base">After the
+                                        Registration of Property:</h3>
+                                    <ul class="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm"
+                                        start="12">
+                                        <li>Make sure all the details of the property entered correctly or not in the
+                                            records of the Registration Office. If found any wrong fed, immediately
+                                            bring
+                                            them to the notice of the Sub Registrar and get them rectified.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            class="sidebar-card fy-card bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 shadow-md rounded-lg p-4 mb-4 border border-blue-200 dark:border-gray-700 flex flex-col items-center text-center">
+                            <div class="fy-title text-lg font-bold text-blue-800 dark:text-blue-200 mb-1">FY 2025-26
+                            </div>
+                            <div class="fy-date text-xs text-gray-600 dark:text-gray-300 mb-1">As on <span id="fy-date"
+                                    class="font-semibold">27-06-2025 12:26 PM</span></div>
+                            <div class="fy-type text-sm text-blue-700 dark:text-blue-300 mb-2">(Non-Agriculture)</div>
+                            <div class="fy-divider w-full border-t border-blue-300 dark:border-gray-600 my-2"></div>
+                            <div class="fy-count text-3xl font-extrabold text-blue-900 dark:text-blue-100 mb-2"
+                                id="fy-count">284762</div>
+                            <button
+                                class="fy-btn bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded shadow transition-colors">Document
+                                Registrations</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            class="sidebar-card news-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
+                            <div class="news-title text-lg font-semibold text-blue-700 mb-2">News & Events</div>
+                            <ul class="news-list space-y-2 text-gray-700 dark:text-gray-300 text-sm" id="news-list">
+                                <li class="flex items-start"><span
+                                        class="inline-block w-2 h-2 mt-2 mr-2 bg-blue-400 rounded-full"></span>Revised
+                                    Rates
+                                    of Stamp Duty <a href="https://registration.telangana.gov.in/GO_MSNo_59.htm"
+                                        class="text-blue-600 hover:underline ml-1" target="_blank" rel="noopener">Click
+                                        here</a></li>
+                                <li class="flex items-start"><span
+                                        class="inline-block w-2 h-2 mt-2 mr-2 bg-blue-400 rounded-full"></span>"Jagraththa"-
+                                    A short film on awareness about property purchase and registration process <a
+                                        href="https://registration.telangana.gov.in/propertyRegistrationVideo.htm"
+                                        class="text-blue-600 hover:underline ml-1" target="_blank" rel="noopener">Click
+                                        here</a></li>
+                                <li class="flex items-start"><span
+                                        class="inline-block w-2 h-2 mt-2 mr-2 bg-blue-400 rounded-full"></span>Beware of
+                                    brokers and middlemen. In case of any complaint please call <span
+                                        class="font-semibold text-blue-700">1800-599-4788</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            class="sidebar-card contact-us bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
+                            <h3 class="text-lg font-semibold text-blue-700 mb-2">Contact Us</h3>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">If you have any questions or need
+                                assistance, feel free to reach out to us:</p>
+                            <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                <li><span class="font-semibold text-blue-700">Email:</span> <a
+                                        href="mailto:gkumar.reg@gmail.com"
+                                        class="text-blue-600 hover:underline ml-1">gkumar.reg@gmail.com</a></li>
+                                <li><span class="font-semibold text-blue-700">Phone:</span> <a href="tel:+918919104530"
+                                        class="text-blue-600 hover:underline ml-1">8919104530</a></li>
+                                <li><span class="font-semibold text-blue-700">Phone:</span> <a href="tel:+918686088400"
+                                        class="text-blue-600 hover:underline ml-1">8686088400</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!--Main-->
+        <div class="flex-1 p-4 sm:ml-80">
+            <!--Carousel-->
+            <div id="animation-carousel" class="top-10 relative w-full mb-8 mt-16" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="relative h-40 overflow-hidden rounded-lg md:h-96">
+                    <!-- Item 1 -->
+                    <div class="duration-700 ease-in-out flex items-center justify-center h-full"
+                        data-carousel-item="active">
+                        <img src="/static/files/G Document Writers.jpg" alt="Document Writers"
+                            class="max-w-full max-h-full object-cover rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="duration-700 ease-in-out flex items-center justify-center h-full" data-carousel-item>
+                        <img src="/static/files/marriage.jpg" alt="Marriage"
+                            class="max-w-full max-h-full object-cover rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="duration-700 ease-in-out flex items-center justify-center h-full" data-carousel-item>
+                        <img src="/static/files/property.jpg" alt="Property"
+                            class="max-w-full max-h-full object-cover rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105">
+                    </div>
+                    <!--Item 4-->
+                    <div class="duration-700 ease-in-out flex items-center justify-center h-full" data-carousel-item>
+                        <img src="/static/files/Visiting Card.jpg" alt="Visiting Card"
+                            class="rounded-lg shadow w-full max-w-md">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+            <!--Main Content-->
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-8">
+                <h2 class="text-xl font-bold text-blue-800 dark:text-blue-200 mb-2">We prepare all types of Drafts:</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">Agreement of Sale, Sale Deed, Gift Deeds, Development
+                    Agreement Deeds, Partition Deeds, Lease Deeds, Power of Attorney (General & Special), Will Deeds,
+                    Release of Rights, Mortgage, Memorandum of Deposit of Title Deeds, Mortgage Release & etc.</p>
+                <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2">Why Choose Us?</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 mb-2">
+                    <li><span class="font-semibold">Expert Drafting:</span> Our experienced team ensures that every
+                        document is legally sound and tailored to your specific needs.</li>
+                    <li><span class="font-semibold">Wide Range of Services:</span> From property transactions to
+                        personal legal documents, we cover all types of deeds and agreements.</li>
+                    <li id="precautions"><span class="font-semibold">Personalized Consultation:</span> We provide
+                        guidance and clarification on the documentation process, helping you understand every clause.
+                    </li>
+                    <li><span class="font-semibold">Confidentiality:</span> Your information and documents are handled
+                        with the utmost privacy and care.</li>
+                    <li><span class="font-semibold">Quick Turnaround:</span> We value your time and strive to deliver
+                        drafts promptly without compromising on quality.</li>
+                </ul>
+                <p class="text-gray-700 dark:text-gray-300">For any queries or to get your draft prepared, <a
+                        href="/contact" class="text-blue-600 hover:underline">contact us</a> today!</p>
+                <div>
+                    <h2 class="text-xl font-bold text-blue-800 dark:text-blue-200 mb-2">Precautions</h2>
+                    <section class="space-y-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-1">Precautions Before
+                                the
+                                Purchase/Registration of Property</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                <li>Ensure the property is <span class="font-semibold">not under mortgage, litigation,
+                                        prohibited list, or court case</span>. If any such issues are found contact the
+                                    relevant office or officer.</li>
+                                <li>Verify all <span class="font-semibold">link documents</span> and related papers such
+                                    as
+                                    Ownership details, Permission, LRS, Pahanies, or any other documents from the
+                                    seller.
+                                </li>
+                                <li>It is advisable to consult a <span class="font-semibold">Legal
+                                        Advisor/Advocate</span>
+                                    and obtain a legal opinion.</li>
+                                <li>Check for <span class="font-semibold">pending dues</span> to government authorities,
+                                    such as property tax, vacant land tax, etc.</li>
+                                <li>Verify the <span class="font-semibold">Encumbrance Certificate (EC)</span> related
+                                    to
+                                    the property.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-1">Before the
+                                Registration
+                                of Property</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                <li>Allow sufficient time for the preparation of the registered document. Rushing may
+                                    lead
+                                    to mistakes.</li>
+                                <li>Read the document <span class="font-semibold">carefully</span>. If any mistakes are
+                                    found, correct them before registration. After registration, verification is of no
+                                    use.
+                                </li>
+                                <li>Verify details such as spelling in names of executants and claimants (as per Aadhaar
+                                    Card), Survey No., Plot No., House No., area of land, plinth area, boundaries, link
+                                    document numbers, etc., before registration.</li>
+                                <li>If discrepancies are found in the marriage certificate issued by the Sub Registrar,
+                                    rectification can be a cumbersome process.</li>
+                                <li>Mention the <span class="font-semibold">payment details</span> of sale
+                                    consideration.
+                                </li>
+                                <li>Do not forget to collect all link documents and related papers from the seller.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-1">After the
+                                Registration
+                                of Property</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                <li>Ensure all property details are entered correctly in the records of the Registration
+                                    Office. If any errors are found, immediately notify the Sub Registrar for
+                                    rectification.
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Disclaimer-->
+    <div id="informational-banner" tabindex="-1"
+        class="fixed bottom-0 start-0 z-50 flex flex-col justify-between w-full p-4 border-b border-gray-200 md:flex-row bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        <div class="mb-4 md:mb-0 md:me-4">
+            <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Disclaimer: Use in Light Mode, Dark mode in development.</h2>
+            <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">The information provided
+                in this website is for General purposes only. All information on the Site is provided in good faith,
+                however we make no representation or warranty of any kind. Under no circumstance shall we have any
+                liability to you for any loss or damage of any kind incurred as a result of the use of the site.</p>
+        </div>
+        <div class="flex items-center shrink-0">
+            <button data-dismiss-target="#informational-banner" type="button"
+                class="shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close banner</span>
+            </button>
+        </div>
+    </div>
+    <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                    <img src="/static/files/Logo.jpg" class="h-8" style="border-radius: 50%;" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GSK Document
+                        Writers</span>
+                </a>
+                <ul
+                    class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                    <li>
+                        <a href="/" class="hover:underline me-4 md:me-6">Home</a>
+                    </li>
+                    <li>
+                        <a href="/services" class="hover:underline me-4 md:me-6">Services</a>
+                    </li>
+                    <li>
+                        <a href="/downloads" class="hover:underline me-4 md:me-6">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="/about" class="hover:underline me-4 md:me-6">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact" class="hover:underline">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a
+                    href="https://flowbite.com/" class="hover:underline">Shubhang</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
+    <script>
+        // Fetch FY 2025-26 and News from Flask backend
+        async function updateFYCountAndNews() {
+            try {
+                const response = await fetch('/api/fy-news');
+                const data = await response.json();
+                // FY Section
+                const fyDateElem = document.getElementById('fy-date');
+                const fyCountElem = document.getElementById('fy-count');
+                if (data.fy_date && fyDateElem) fyDateElem.textContent = data.fy_date;
+                if (data.fy_count && fyCountElem) fyCountElem.textContent = data.fy_count;
+                // News Section
+                const newsList = document.getElementById('news-list');
+                if (newsList && Array.isArray(data.news)) {
+                    let newsHtml = '';
+                    let hasValidNews = false;
+                    for (const item of data.news) {
+                        if (item.url && typeof item.url === 'string' && item.url.startsWith('http')) {
+                            newsHtml += `<li>${item.title} <a href="${item.url}" target="_blank" rel="noopener noreferrer">Click here</a></li>`;
+                            hasValidNews = true;
+                        } else if (!item.url) {
+                            newsHtml += `<li>${item.title}</li>`;
+                            hasValidNews = true;
+                        }
+                        // If item.url exists but is not a valid http(s) link, skip rendering as a link
+                    }
+                    // Only update if we have at least one valid news item
+                    if (hasValidNews) {
+                        newsList.innerHTML = newsHtml;
+                    }
+                }
+            } catch (e) {
+                // Show error in the sidebar for debugging
+                const fyDateElem = document.getElementById('fy-date');
+                const fyCountElem = document.getElementById('fy-count');
+                if (fyDateElem) fyDateElem.textContent = 'Error';
+                if (fyCountElem) fyCountElem.textContent = 'Error';
+                const newsList = document.getElementById('news-list');
+                if (newsList) newsList.innerHTML = '<li>Unable to fetch live data.</li>';
+            }
+        }
+        updateFYCountAndNews();
+        setInterval(updateFYCountAndNews, 5 * 60 * 1000);
+    </script>
+    <script>
+        // Auto-scroll for precautions (infinite loop)
+        (function () {
+            const scrollDiv = document.getElementById('precautions-scroll');
+            if (!scrollDiv) return;
+            // Duplicate the content for seamless infinite scroll
+            const originalContent = scrollDiv.innerHTML;
+            scrollDiv.innerHTML = originalContent + originalContent;
+            let scrollStep = 1;
+            let resetPoint = scrollDiv.scrollHeight / 2;
+            let interval = setInterval(() => {
+                if (!scrollDiv) return;
+                if (scrollDiv.scrollTop >= resetPoint) {
+                    scrollDiv.scrollTop = 0;
+                } else {
+                    scrollDiv.scrollTop += scrollStep;
+                }
+            }, 60); // Adjust speed as needed
+            scrollDiv.addEventListener('mouseenter', () => clearInterval(interval));
+            scrollDiv.addEventListener('mouseleave', () => {
+                interval = setInterval(() => {
+                    if (scrollDiv.scrollTop >= resetPoint) {
+                        scrollDiv.scrollTop = 0;
+                    } else {
+                        scrollDiv.scrollTop += scrollStep;
+                    }
+                }, 60);
+            });
+        })();
+    </script>
+</body>
+
+</html>
