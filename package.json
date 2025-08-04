@@ -7,7 +7,7 @@
   "name": "g-kumar-santhosh-document-writers",
   "version": "1.0.0",
   "scripts": {
-  "build": "tailwindcss -i ./app/static/css/input.css -o ./app/static/dist/css/output.css --minify"
+  "build": "tailwindcss -i ./app/static/src/input.css -o ./app/static/dist/output.css --minify"
 },
 
   "repository": {
